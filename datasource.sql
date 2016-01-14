@@ -17,8 +17,10 @@ CREATE TABLE Locations (
 CREATE TABLE Books (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Title VARCHAR(255) NOT NULL,
+	Genre VARCHAR(255) NOT NULL,
     PublicationDate DATE,
     PurchaseDate DATE,
+	Description VARCHAR(255),
     LocationID VARCHAR(255) NOT NULL,
     FOREIGN KEY(LocationID) REFERENCES Locations(Location)
 );
@@ -54,7 +56,7 @@ INSERT INTO Locations (Location) VALUES ('Health Center Library');
 
 INSERT INTO BookAuthors (FirstName, MiddleName, LastName) VALUES ('Mitch', '', 'Albom');
 
-INSERT INTO Books (Title, PublicationDate, PurchaseDate, LocationID) VALUES ('The Magic Strings of Frankie Presto', 2015-11-10, '', 'Hardback Library');
+INSERT INTO Books (Title, PublicationDate, PurchaseDate, LocationID) VALUES ('The Magic Strings of Frankie Presto', '2015-11-10', '', 'Hardback Library');
 
 INSERT INTO AuthorsInBooks (AuthorID, BookID) VALUES (1,1);
 
@@ -70,16 +72,16 @@ WHERE Books.ID = 1
 START TRANSACTION;
 
 INSERT INTO Books(Title, PublicationDate, PurchaseDate, LocationID)
-VALUES('Simple Genius', '2008-4-1','','Hardback Library')
+VALUES('Simple Genius', '2008-4-1','2009-5-7','Hardback Library');
 
 SET @bookid =  LAST_INSERT_ID();
 
 INSERT INTO BookAuthors(FirstName, MiddleName, LastName)
-VALUES('David', , 'Baldacci')
+VALUES('David', '', 'Baldacci');
 
 SET @authorid =  LAST_INSERT_ID();
 
 INSERT INTO AuthorsInBooks(AuthorID, BookID)
-VALUES(@authorid, @bookid)
+VALUES(@authorid, @bookid);
 
 COMMIT;
