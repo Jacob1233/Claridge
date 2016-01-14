@@ -6,12 +6,17 @@ DROP TABLE AuthorsInBooks;
 DROP TABLE Checkouts;
 DROP TABLE Books;
 DROP TABLE Locations;
+DROP TABLE Genres;
 DROP TABLE BookAuthors;
 
 /*CREATE*/
 
 CREATE TABLE Locations (
     Location VARCHAR(255) PRIMARY KEY
+);
+
+CREATE TABLE Genres (
+    Genre VARCHAR(255) PRIMARY KEY
 );
 
 CREATE TABLE Books (
@@ -22,7 +27,9 @@ CREATE TABLE Books (
     PurchaseDate DATE,
 	Description VARCHAR(255),
     LocationID VARCHAR(255) NOT NULL,
-    FOREIGN KEY(LocationID) REFERENCES Locations(Location)
+	GenreID VARCHAR(255) NOT NULL,
+    FOREIGN KEY(LocationID) REFERENCES Locations(Location),
+	FOREIGN KEY(GenreID) REFERENCES Genres(Genre)
 );
 
 CREATE TABLE Checkouts (
@@ -54,9 +61,16 @@ INSERT INTO Locations (Location) VALUES ('Hardback Library');
 INSERT INTO Locations (Location) VALUES ('Paperback Library');
 INSERT INTO Locations (Location) VALUES ('Health Center Library');
 
+INSERT INTO Genres (Genre) VALUES ('Fiction');
+INSERT INTO Genres (Genre) VALUES ('Mystery');
+INSERT INTO Genres (Genre) VALUES ('Short Story');
+INSERT INTO Genres (Genre) VALUES ('Biography');
+INSERT INTO Genres (Genre) VALUES ('History');
+INSERT INTO Genres (Genre) VALUES ('Large Print');
+
 INSERT INTO BookAuthors (FirstName, MiddleName, LastName) VALUES ('Mitch', '', 'Albom');
 
-INSERT INTO Books (Title, PublicationDate, PurchaseDate, LocationID) VALUES ('The Magic Strings of Frankie Presto', '2015-11-10', '', 'Hardback Library');
+INSERT INTO Books (Title, PublicationDate, PurchaseDate, LocationID, Description, GenreID) VALUES ('The Magic Strings of Frankie Presto', '2015-11-10', '2015-12-12', 'Hardback Library', '', 'Fiction');
 
 INSERT INTO AuthorsInBooks (AuthorID, BookID) VALUES (1,1);
 
@@ -71,8 +85,8 @@ WHERE Books.ID = 1
 /*TRANSACTION*/
 START TRANSACTION;
 
-INSERT INTO Books(Title, PublicationDate, PurchaseDate, LocationID)
-VALUES('Simple Genius', '2008-4-1','2009-5-7','Hardback Library');
+INSERT INTO Books(Title, PublicationDate, PurchaseDate, LocationID, Description, GenreID)
+VALUES('Simple Genius', '2008-4-1','2009-5-7','Hardback Library', '', 'Fiction');
 
 SET @bookid =  LAST_INSERT_ID();
 
