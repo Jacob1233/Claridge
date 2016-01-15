@@ -85,7 +85,7 @@ WHERE Books.ID = 1
 /*TRANSACTION*/
 START TRANSACTION;
 
-INSERT INTO Books(Title, PublicationDate, PurchaseDate, LocationID, Description, GenreID)
+INSERT INTO Books( Title, PublicationDate, PurchaseDate, LocationID, Description, GenreID)
 VALUES('Simple Genius', '2008-4-1','2009-5-7','Hardback Library', '', 'Fiction');
 
 SET @bookid =  LAST_INSERT_ID();
@@ -99,3 +99,11 @@ INSERT INTO AuthorsInBooks(AuthorID, BookID)
 VALUES(@authorid, @bookid);
 
 COMMIT;
+
+/*Search Concat Author*/
+SELECT * FROM BookAuthors
+	JOIN AuthorsInBooks
+		ON BookAuthors.ID = AuthorsInBooks.AuthorID
+	JOIN Books
+		ON Books.ID = AuthorsInBooks.BookID
+WHERE CONCAT(FirstName, MiddleName, LastName) LIKE '%Mitch%Albom%'
