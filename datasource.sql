@@ -56,6 +56,32 @@ CREATE TABLE AuthorsInBooks (
     FOREIGN KEY(BookID) REFERENCES books(ID)
 );
 
+CREATE TABLE Checkouts (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ResidentFirstName VARCHAR(255),
+    ResidentLastName VARCHAR(255),
+	OutDate DATE,
+	EstInDate DATE,
+	InDate DATE
+);
+
+CREATE TABLE PrevCheckouts (
+    ID INT PRIMARY KEY,
+    ResidentFirstName VARCHAR(255),
+    ResidentLastName VARCHAR(255),
+	OutDate DATE,
+	EstInDate DATE,
+	InDate DATE
+);
+
+CREATE TABLE BooksInCheckOut (
+    BookID INT NOT NULL,
+    CheckoutID INT NOT NULL,
+    PRIMARY KEY(BookID, CheckoutID),
+    FOREIGN KEY(BookID) REFERENCES Books(ID),
+    FOREIGN KEY(CheckoutID) REFERENCES Checkouts(ID)
+);
+
 /*INSERT*/
 INSERT INTO Locations (Location) VALUES ('Hardback Library');
 INSERT INTO Locations (Location) VALUES ('Paperback Library');
