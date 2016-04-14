@@ -1,0 +1,18 @@
+[15-Jan-2016 09:59:33 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 14
+[15-Jan-2016 10:01:46 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::beginTransaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 18
+[15-Jan-2016 10:31:18 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::beginTransaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 17
+[15-Jan-2016 10:34:30 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 17
+[15-Jan-2016 10:35:42 America/Chicago] PHP Fatal error:  Call to undefined function mysqli() in /home4/jacob/public_html/NewLib/admin/includes/index.php on line 7
+[15-Jan-2016 10:36:29 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 17
+[15-Jan-2016 10:37:03 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 17
+[15-Jan-2016 10:38:58 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 17
+[15-Jan-2016 10:39:20 America/Chicago] PHP Fatal error:  Call to undefined method mysqli::begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 17
+[15-Jan-2016 10:43:31 America/Chicago] PHP Fatal error:  Call to undefined function mysqli_begin_transaction() in /home4/jacob/public_html/NewLib/admin/add/action.php on line 16
+[15-Jan-2016 10:48:50 America/Chicago] PHP Fatal error:  Call to a member function autocommit() on a non-object in /home4/jacob/public_html/NewLib/admin/add/action.php on line 33
+[15-Jan-2016 10:51:09 America/Chicago] PHP Parse error:  syntax error, unexpected '"' (T_CONSTANT_ENCAPSED_STRING) in /home4/jacob/public_html/NewLib/admin/add/action.php on line 21
+[15-Jan-2016 10:53:06 America/Chicago] PHP Parse error:  syntax error, unexpected '"' (T_CONSTANT_ENCAPSED_STRING) in /home4/jacob/public_html/NewLib/admin/add/action.php on line 21
+[15-Jan-2016 10:54:24 America/Chicago] PHP Parse error:  syntax error, unexpected '"' (T_CONSTANT_ENCAPSED_STRING) in /home4/jacob/public_html/NewLib/admin/add/action.php on line 21
+[15-Jan-2016 10:55:23 America/Chicago] PHP Parse error:  syntax error, unexpected '"' (T_CONSTANT_ENCAPSED_STRING) in /home4/jacob/public_html/NewLib/admin/add/action.php on line 21
+[15-Jan-2016 11:07:31 America/Chicago] PHP Warning:  mysqli_autocommit() expects exactly 2 parameters, 1 given in /home4/jacob/public_html/NewLib/admin/add/action.php on line 29
+[15-Jan-2016 11:07:31 America/Chicago] PHP Warning:  mysqli_autocommit() expects exactly 2 parameters, 1 given in /home4/jacob/public_html/NewLib/admin/add/action.php on line 46
+[15-Jan-2016 11:18:03 America/Chicago] PHP Parse error:  syntax error, unexpected ')' in /home4/jacob/public_html/NewLib/admin/add/action.php on line 45
